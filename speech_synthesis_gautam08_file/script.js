@@ -4,6 +4,11 @@ var inputForm = document.querySelector('form');
 var inputTxt = document.querySelector('.txt');
 var voiceSelect = document.querySelector('select');
 
+var pitch = document.querySelector('#pitch');
+var pitchValue = document.querySelector('.pitch-value');
+var rate = document.querySelector('#rate');
+var rateValue = document.querySelector('.rate-value');
+
 var voices = [];
 
 function populateVoiceList() {
@@ -55,7 +60,8 @@ function speak(){
         break;
       }
     }
-    
+    utterThis.pitch = pitch.value;
+    utterThis.rate = rate.value;
     synth.speak(utterThis);
   }
 }
@@ -68,7 +74,13 @@ inputForm.onsubmit = function(event) {
   inputTxt.blur();
 }
 
+pitch.onchange = function() {
+  pitchValue.textContent = pitch.value;
+}
 
+rate.onchange = function() {
+  rateValue.textContent = rate.value;
+}
 
 voiceSelect.onchange = function(){
   speak();
