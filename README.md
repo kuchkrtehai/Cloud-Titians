@@ -13,6 +13,7 @@ In this Challenge, you need to make a Text to speech App as a prototype by your 
 1. I made this application for disbale people who can write,read and I have also included a prototype of voice controlled map.
 2. I am begginer to do this work but Time to time I will make perfect web-assistant application that can be used by anyone free of cost.
 3. I have added some feasible things in speech to text part(you can copy and mail)
+4. This web assistant application has feasible for different different language
   
 ## Steps
 
@@ -50,8 +51,9 @@ Samples & tutorials | Cloud Text-to-Speech Documentation - Sample GCP Projects f
 >> https://cloud.google.com/text-to-speech/docs/samples
 
 ### Screenshots
-   <img src="/screenshot/project1.PNG" height="200em" width="150em" /><img src="/screenshot/project2.PNG" height="200em" width="150em" />
-   <img src="/screenshot/project3.PNG" height="200em" width="150em" />
+   <img src="/screenshot/project1.PNG" height="200em"/>
+   <img src="/screenshot/project2.PNG" height="200em" />
+   <img src="/screenshot/project3.PNG" height="200em" />
  
 ### How can deploy on Digital-occean website
 Step 1 — Go to @[Digital Ocean](https://www.digitalocean.com/) and sign up

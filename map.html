@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Speech Map App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\public\font-awesome\css\font-awesome.css">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+    <style>
+       #map{
+            height:400px;
+            width:100%;
+
+       }   
+    
+    </style>
+</head>
+<body>
+     <header style="background-color:#d7dfdf;border-radius:12px;">
+      <h1 style="color:#3f351f; text-align:center; font-family: 'Piedra', 'cursive';" data-aos="zoom-out" data-aos-delay="500">Incubate Web Assitant</h1>
+    </header>
+    <div id="map"> </div>
+    
+<script>
+  function initMap(){
+      //Map option
+
+      var options={
+          zoom:2,
+          center:{lat:20.5937,lng:78.9629}
+     }
+
+    //New map
+     var map= new 
+     google.maps.Map(document.getElementById('map'),options);
+     
+      var marker = new google.maps.Marker({
+          position:{lat:19,long:72.9629},
+
+      } );
+
+  }
+
+ </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC251D5sddZ7i8yc5hG5aPAUizIVghaX6k&callback=initMap"
+    async defer>
+</script>
+</body>
+</html>
