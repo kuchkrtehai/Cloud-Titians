@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Web Speech</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/web-speech.css">
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\public\font-awesome\css\font-awesome.min.css" >
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+   <header style="background-color:#d7dfdf;border-radius:12px;">
+      <h1 style="color:#3f351f; text-align:center; font-family: 'Piedra', 'cursive';" data-aos="zoom-out" data-aos-delay="500">Incubate Web Assitant</h1>
+    </header>
+      <main>
+      <a href="./browser-voices.html" type="button" class="btn btn-warning " claa="active" aria-pressed="true" data-aos="zoom-out" data-aos-delay="2400">Text to Speech</a>
+    <a href="#" type="button" class="btn btn-warning" claa="active" aria-pressed="true"  data-aos="zoom-out" data-aos-delay="3000">Speech to Text</a>
+    <div class="icons">
+    <i class="fa fa-microphone fa-5x" style="color:#e0ea0d; "margin:0% 1% 4% 0%;" data-aos="fade-left" data-aos-delay="1300"></i>
+     <i class="fa fa-language fa-5x" style="color:#0beeac;"margin:0% 1% 4% 0%;" data-aos="fade-right" data-aos-delay="1000" ></i>
+    </div>
+          <div class="container mt-3">
+              <h3 class="text-center"></h3>
+              <div id="info"></div>
+              <div class="float-right">
+                <button id="start_button">
+                  <img id="start_img" src="images/mic.gif" alt="Start"></button>
+              </div>
+              <div id="results">
+                <span id="final_span" class="final"></span>
+                <span id="interim_span" class="interim"></span>
+                <p>
+              </div>
+              <div class="row col-12 p-0 m-0">
+                <div class="row col-12 col-md-8 col-lg-6 p-0 m-0">
+                    <select id="select_language"></select>
+                    <select id="select_dialect"></select>
+                </div>
+                <div class="col-12 col-md-4 col-lg-6 mt-3 mt-md-0 p-0 m-0">
+                  <div class="float-right">
+                    <button id="copy_button" class="btn btn-primary ">Copy</button>
+                  </div>
+                  <div class="float-right">
+                    <a href="mailto:amiteshmanitiwari1997@gmail.com">
+                    <button id="email_button" class="btn btn-primary " style="margin:0px 2px;">Email
+                    </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+      </main>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <footer>
+      <p>
+        Built with 🎧 by <a href="https://github.com/geekyamitesh">geekyamitesh</a>
+      </p>
+    </footer>
+  <script>
+    AOS.init();
+  </script>
+      <script src="js/languages.js"></script>
+      <script src="js/web-speech-api.js"></script>
+  </body>
+</html>
+
