@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Browser voices</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\public\font-awesome\css\font-awesome.css">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header style="background-color:#d7dfdf; margin:0;border-radius:12px">
+      <h1 style="color:#3f351f; font-family: 'Piedra', cursive;" data-aos="zoom-out" data-aos-delay="500">Incubate Web Assitant</h1>
+    </header>
+    <main>
+          
+    <a href="#" type="button" class="btn btn-warning " claa="active" aria-pressed="true" data-aos="zoom-out" data-aos-delay="2400">Text to Speech</a>
+    <a href="./index.html" type="button" class="btn btn-warning" claa="active" aria-pressed="true"  data-aos="zoom-out" data-aos-delay="3000">Speech to Text</a>
+      <form class="input" id="voice-form">
+          <i class="fa fa-language fa-5x" style="color:#0beeac; margin:0% 1% 4% 0%;" data-aos="fade-right" data-aos-delay="1000" ></i>
+          <i class="fa fa-microphone fa-5x" style="color:#e0ea0d; margin:0% 1% 4% 0%;" data-aos="fade-left" data-aos-delay="1300"></i>
+        <div class="field">
+          <input type="text" name="speech" id="speech" required placeholder="Text to speech" data-aos="fade-up" data-aos-delay="1500"/>
+        </div>
+        <div class="field" data-aos="fade-up" data-aos-delay="1700">
+          <select name="voices" id="voices"></select>
+        </div>
+        <button class="btn btn-warning btn-lg" data-aos="fade-up" data-aos-delay="2000">Say it!</button>
+      </form>
+    </main>
+    <footer>
+      <p>
+        Built with 🎧 by <a href="https://github.com/geekyamitesh">geekyamitesh</a>
+      </p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('voice-form');
+        const input = document.getElementById('speech');
+        const main = document.getElementsByTagName('main')[0];
+        const voiceSelect = document.getElementById('voices');
+        let voices;
+        let currentVoice;
+
+        const populateVoices = () => {
+          const availableVoices = speechSynthesis.getVoices();
+          voiceSelect.innerHTML = '';
+
+          availableVoices.forEach(voice => {
+            const option = document.createElement('option');
+            let optionText = `${voice.name} (${voice.lang})`;
+            if (voice.default) {
+              optionText += ' [default]';
+              if (typeof currentVoice === 'undefined') {
+                currentVoice = voice;
+                option.selected = true;
+              }
+            }
+            if (currentVoice === voice) {
+              option.selected = true;
+            }
+            option.textContent = optionText;
+            voiceSelect.appendChild(option);
+          });
+          voices = availableVoices;
+        };
+
+        populateVoices();
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+          speechSynthesis.onvoiceschanged = populateVoices;
+        }
+
+        voiceSelect.addEventListener('change', event => {
+          const selectedIndex = event.target.selectedIndex;
+          currentVoice = voices[selectedIndex];
+        });
+
+        form.addEventListener('submit', event => {
+          event.preventDefault();
+          const toSay = input.value.trim();
+          const utterance = new SpeechSynthesisUtterance(toSay);
+          utterance.voice = currentVoice;
+          utterance.addEventListener('start', event => {
+            main.classList.add('speaking');
+          });
+          utterance.addEventListener('end', event => {
+            main.addEventListener(
+              'animationiteration',
+              event => {
+                main.classList.remove('speaking');
+              },
+              {
+                once: true
+              }
+            );
+          });
+          speechSynthesis.speak(utterance);
+          input.value = '';
+        });
+      });
+    </script>
+  </body>
+</html>
