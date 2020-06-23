@@ -1,9 +1,5 @@
 # Cloud-Titians - Voice-based Web browsing app for disabled people using Cloud APIs 
 
-
-## Deployment-website link - 'http://142.93.250.23/Incubate-Web-Assistant/speech-synthesis/browser-voices.html'
-
-
 ## Challenge given by Cloud Titans 
 
 Basically you need to use a Text to speech API for a Web App that can be used in a browser like Chrome or Firefox.
@@ -35,11 +31,6 @@ Step 5 — I have also added some new feature such like speech to text other tha
 Step 6 — I deployed my website on Digitaloccean
 
 step 7 — I added map api
-
-### You can open project in local server by http://127.0.0.1:5503/speech-synthesis/browser-voices.html
-### Show some :heart: and :star: the repo to support the project. 
-For more, contact me @[facebook](https://www.facebook.com/amiteshmani.tiwari), @[Twitter](https://twitter.com/amitesh_mani) or @[Linkedin](https://www.linkedin.com/in/amitesh-mani-tiwari)
-
 
 
 ## Resources
