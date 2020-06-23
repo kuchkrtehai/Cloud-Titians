@@ -1,4 +1,4 @@
-# Cloud-Titians - Voice-based Web browsing app for disabled people using Cloud APIs made by @[GeekyAmitesh](https://github.com/geekyamitesh)
+# Cloud-Titians - Voice-based Web browsing app for disabled people using Cloud APIs 
 
 
 ## Deployment-website link - 'http://142.93.250.23/Incubate-Web-Assistant/speech-synthesis/browser-voices.html'
@@ -87,10 +87,3 @@ Step 6 — Commands to install Nginx on Ubuntu
                   sudo service nginx restart
               f. sudo chown -R user:user /srv/www
               ###I think this can solve your porblem.
-
-## Facing Any Problem or need any Help:grey_question:
-Write me in [issues]((https://github.com/geekyamitesh) section. I will try solve your issue within 10-12 hours.
-</br>***Keep Developing and Destroying.*** :wink:
-
- 
-
